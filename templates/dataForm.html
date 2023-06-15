@@ -1,0 +1,50 @@
+{% block body %}
+
+
+<button onclick="openFunction()" id="tambahDataBtn" class="bg-green-500 text-white px-4 py-2 rounded-lg mb-4 mt-4 hover:scale-105">Tambah Data</button>
+
+      <div class="overlay"></div>
+      <div class="popup">
+        <h2 class="font-bold ">Data Form</h2>
+        <form onsubmit="submitFunction()" action="{{ url_for('insert') }}" method="POST" id="form">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2 mt-2" for="namaInput">Nama:</label>
+            <input type="text" name="nama" id="nama" class="px-3 py-2 border rounded-md w-96" required="1">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="alamatInput">Alamat:</label>
+            <input type="text" name="alamat" id="alamat" class="px-3 py-2 border rounded-md w-96" required="1">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="noTelpInput">No. Telepon:</label>
+            <input type="tel" name="telpon" id="telpon" class="px-3 py-2 border rounded-md w-96" required="1">
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="jenisKelaminInput">Jenis Kelamin:</label>
+            <select name="gender" id="gender" class="px-3 py-2 border rounded-md w-96" required="1">
+              <option value="" disabled selected>Pilih Jenis Kelamin</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+            <p class="text-xs text-gray-500">Silakan pilih jenis kelamin</p>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="jenisKursusInput">Jenis Kursus:</label>
+            <select name="kursus" id="kursus" class="px-3 py-2 border rounded-md w-96" required="1">
+              <option value="" disabled selected>Pilih Jenis Kursus</option>
+              <option value="Kursus Bahasa Java">Kursus Bahasa Java</option>
+              <option value="Kursus Pemrograman Web">Kursus Pemrograman Web</option>
+              <option value="Kursus Python">Kursus Python</option>
+            </select>
+            <p class="text-xs text-gray-500">Silakan pilih jenis kursus</p>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="tanggalPendaftaranInput">Tanggal Pendaftaran:</label>
+            <input type="date" name="tanggal" id="tanggal" class="px-3 py-2 border rounded-md w-96" required="1">
+          </div>
+          <button type="button" onclick="submitFunction()" class="bg-green-500 text-white px-4 py-2 rounded-lg mr-2 mt-5">Submit</button>
+          <button type="button" onclick="closeFunction()" id="cancelBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg">Cancel</button>
+        </form>
+      </div>
+
+{% endblock %}
